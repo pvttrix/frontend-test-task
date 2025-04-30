@@ -1,7 +1,5 @@
 #  Neuffer Frontend Developer Test Task: Shopping Cart Page Implementation
 
-**Estimated Time:** 2–3 hours
-
 ## Description
 
 Implement a responsive shopping cart page based on the provided design mockup. **The mockup serves as a guide for the overall layout, structure, and general appearance; pixel-perfect replication is not required.** However, the final result should visually resemble the mockup reasonably closely.
