@@ -1,37 +1,37 @@
 <script setup lang="ts">
-import { computed, useAttrs } from 'vue'
+import { computed, useAttrs } from 'vue';
 
 defineOptions({
   inheritAttrs: false,
-})
+});
 
 export interface UiButtonProps {
-  variant?:'success' | 'danger' | 'dark' |  'ghost' | 'outline'
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  disabled?: boolean
-  loading?: boolean
-  block?: boolean // full width
-  iconOnly?: boolean // для кнопок только с иконкой
-  type?: 'button' | 'submit' | 'reset'
-  ariaLabel?: string
-  class?: string
+  variant?: 'success' | 'danger' | 'dark' | 'ghost' | 'outline';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  disabled?: boolean;
+  loading?: boolean;
+  block?: boolean;
+  iconOnly?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  ariaLabel?: string;
+  class?: string;
 }
 
 const props = withDefaults(defineProps<UiButtonProps>(), {
-  variant: 'primary',
+  variant: 'success',
   size: 'md',
   disabled: false,
   loading: false,
   block: false,
   iconOnly: false,
   type: 'button',
-})
+});
 
 const emit = defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  click: [event: MouseEvent];
+}>();
 
-const attrs = useAttrs()
+const attrs = useAttrs();
 
 const buttonClasses = computed(() => {
   const base = [
@@ -41,37 +41,24 @@ const buttonClasses = computed(() => {
     'focus:outline-none focus:ring-2 focus:ring-offset-2',
     'disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none',
     'active:scale-95',
-    // Prevent text selection
     'select-none',
-  ].join(' ')
+  ].join(' ');
 
   const variants = {
-    success: [
-      'bg-green-500 text-white',
-      'hover:bg-green-600',
-      'focus:ring-green-500',
-      'shadow-sm hover:shadow',
-    ].join(' '),
+    success: ['bg-success text-white', 'hover:bg-success/80', 'focus:ring-green-500', 'shadow-sm hover:shadow'].join(
+      ' ',
+    ),
 
-    danger: [
-      'bg-red-500 text-white',
-      'hover:bg-red-600',
-      'focus:ring-red-500',
-      'shadow-sm hover:shadow',
-    ].join(' '),
+    danger: ['bg-danger text-white', 'hover:bg-danger/80', 'focus:ring-red-500', 'shadow-sm hover:shadow'].join(' '),
     dark: ['bg-black text-white hover:bg-gray-800 focus:ring-black shadow-sm hover:shadow'].join(' '),
-    ghost: [
-      'bg-transparent text-gray-700',
-      'hover:bg-gray-100',
-      'focus:ring-gray-400',
-    ].join(' '),
+    ghost: ['bg-transparent text-gray-700', 'hover:bg-gray-100', 'focus:ring-gray-400'].join(' '),
 
     outline: [
       'bg-transparent border-2 border-gray-300 text-gray-700',
       'hover:bg-gray-50 hover:border-gray-400',
       'focus:ring-gray-400',
     ].join(' '),
-  }
+  };
 
   const sizes = {
     xs: props.iconOnly ? 'w-6 h-6 p-1 text-xs' : 'px-2 py-1 text-xs rounded',
@@ -79,73 +66,67 @@ const buttonClasses = computed(() => {
     md: props.iconOnly ? 'w-10 h-10 p-2 text-base' : 'px-4 py-2 text-base rounded-md',
     lg: props.iconOnly ? 'w-12 h-12 p-2.5 text-lg' : 'px-6 py-3 text-lg rounded-md',
     xl: props.iconOnly ? 'w-14 h-14 p-3 text-xl' : 'px-8 py-4 text-xl rounded-lg',
-  }
+  };
 
-  const classes = [
-    base,
-    variants[props.variant],
-    sizes[props.size],
-  ]
+  const classes = [base, variants[props.variant], sizes[props.size]];
 
   // Full width
   if (props.block) {
-    classes.push('w-full')
+    classes.push('w-full');
   }
 
   // Icon only - make it circular
   if (props.iconOnly) {
-    classes.push('rounded-full')
+    classes.push('rounded-full');
   }
 
   // Custom classes
   if (props.class) {
-    classes.push(props.class)
+    classes.push(props.class);
   }
   if (attrs.class) {
-    classes.push(attrs.class as string)
+    classes.push(attrs.class as string);
   }
 
-  return classes.join(' ')
-})
+  return classes.join(' ');
+});
 
-const isDisabled = computed(() => props.disabled || props.loading)
+const isDisabled = computed(() => props.disabled || props.loading);
 
 const handleClick = (event: MouseEvent) => {
   if (!isDisabled.value) {
-    emit('click', event)
+    emit('click', event);
   }
-}
+};
 </script>
 
 <template>
   <button
-      v-bind="{ ...$attrs }"
-      :type="type"
-      :class="buttonClasses"
-      :disabled="isDisabled"
-      :aria-label="ariaLabel"
-      :aria-busy="loading"
-      :aria-disabled="isDisabled"
-      @click="handleClick"
-  >
+    v-bind="{ ...$attrs }"
+    :type="type"
+    :class="buttonClasses"
+    :disabled="isDisabled"
+    :aria-label="ariaLabel"
+    :aria-busy="loading"
+    :aria-disabled="isDisabled"
+    @click="handleClick">
     <!-- Left Icon Slot -->
     <slot name="icon-left" />
 
     <!-- Loading Spinner -->
     <span
-        v-if="loading"
-        :class="[
+      v-if="loading"
+      :class="[
         'inline-block animate-spin rounded-full border-2 border-current border-t-transparent',
         size === 'xs' ? 'h-3 w-3' : '',
         size === 'sm' ? 'h-4 w-4' : '',
         size === 'md' ? 'h-4 w-4' : '',
         size === 'lg' ? 'h-5 w-5' : '',
         size === 'xl' ? 'h-6 w-6' : '',
-        $slots.default || $slots['icon-right'] ? 'mr-2' : ''
+        $slots.default || $slots['icon-right'] ? 'mr-2' : '',
       ]"
-        role="status"
-        aria-hidden="true"
-    />
+      role="status"
+      aria-hidden="true" />
 
     <!-- Content -->
     <slot />

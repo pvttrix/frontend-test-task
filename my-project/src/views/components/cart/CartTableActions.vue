@@ -1,40 +1,40 @@
 <script setup lang="ts">
+import UiButton from '../ui/UiButton.vue';
+import { useCartStore } from '../../../stores/cart.ts';
 
-import UiButton from '../ui/UiButton.vue'
-import {useCartStore} from "../../../stores/cart.ts";
-
-const cartStore = useCartStore()
+const cartStore = useCartStore();
 
 const handleAddItem = async () => {
-  await cartStore.addItem()
-}
+  await cartStore.addItem();
+};
 
 const handleClearCart = () => {
-  if (cartStore.isEmpty) return
+  if (cartStore.isEmpty) return;
 
   if (confirm(`Are you sure you want to remove all ${cartStore.itemCount} items from your cart?`)) {
-    cartStore.clearCart()
+    cartStore.clearCart();
   }
-}
+};
 </script>
 
 <template>
-  <div class="flex flex-col sm:flex-row gap-4 justify-between" role="group" aria-label="Cart actions">
+  <div
+    class="flex flex-col sm:flex-row gap-4 justify-between"
+    role="group"
+    aria-label="Cart actions">
     <UiButton
-        variant="success"
-        @click="handleAddItem"
-        :disabled="cartStore.isLoading"
-        aria-label="Add new item to cart"
-    >
+      variant="success"
+      :disabled="cartStore.isLoading"
+      aria-label="Add new item to cart"
+      @click="handleAddItem">
       Add Item
     </UiButton>
 
     <UiButton
-        variant="danger"
-        @click="handleClearCart"
-        :disabled="cartStore.isEmpty || cartStore.isLoading"
-        :aria-label="`Clear all ${cartStore.itemCount} items from cart`"
-    >
+      variant="danger"
+      :disabled="cartStore.isEmpty || cartStore.isLoading"
+      :aria-label="`Clear all ${cartStore.itemCount} items from cart`"
+      @click="handleClearCart">
       Clear Cart
     </UiButton>
   </div>

@@ -1,32 +1,33 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @theme {
-    /* === COLORS === */
-    --color-body: #fff;
-    --color-success: #19D16F;
-    --color-danger: #FB2E86;
-    --color-black: #000000;
-    --color-bright-gray: #E8E6F1;
-    --color-magnolia:#F4F4FC;
-    --color-light-gray:#A1A8C1;
-    --color-silver:#BEBFC2;
-    --color-navy-blue:#1D3178;
+  /* === COLORS === */
+  --color-body: #fff;
+  --color-success: #19d16f;
+  --color-danger: #fb2e86;
+  --color-black: #000000;
+  --color-bright-gray: #e8e6f1;
+  --color-magnolia: #f4f4fc;
+  --color-light-gray: #a1a8c1;
+  --color-silver: #bebfc2;
+  --color-navy-blue: #1d3178;
+  --color-light-blue: #0843fc;
+  --color-input-placeholder: #c5cbe3;
 
-
-    --font-roboto: "Roboto", sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-lato: 'Lato', sans-serif;
 }
 
-
 @layer utilities {
-    /* Screen reader only */
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-    }
+  /* Screen reader only */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 }

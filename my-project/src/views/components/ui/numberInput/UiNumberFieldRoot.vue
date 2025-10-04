@@ -1,29 +1,5 @@
-<script lang="ts">
-import type { Ref } from 'vue'
-import { createContext } from '../../../../utils/context.ts'
-
-interface NumberFieldContext {
-  modelValue: Ref<number>
-  min: Ref<number | undefined>
-  max: Ref<number | undefined>
-  disabled: Ref<boolean>
-  readonly: Ref<boolean>
-  id: Ref<string | undefined>
-  canIncrement: Ref<boolean>
-  canDecrement: Ref<boolean>
-  handleIncrement: () => void
-  handleDecrease: () => void
-  handleInput: (event: Event) => void
-  handleBlur: (event: Event) => void
-  handleKeyDown: (event: KeyboardEvent) => void
-}
-
-export const [injectNumberFieldContext, provideNumberFieldContext] =
-    createContext<NumberFieldContext>('UiNumberFieldRoot')
-</script>
-
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 interface Props {
   min?: number
@@ -41,6 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const model = defineModel<number>({ required: true })
+const hasError = ref(false) // добавили
 
 const clampValue = (value: number): number => {
   let clamped = value
@@ -68,11 +45,13 @@ const canIncrement = computed(() => {
 const handleIncrement = () => {
   if (!canIncrement.value) return
   model.value = clampValue(model.value + props.step)
+  hasError.value = false
 }
 
 const handleDecrease = () => {
   if (!canDecrement.value) return
   model.value = clampValue(model.value - props.step)
+  hasError.value = false
 }
 
 const handleInput = (event: Event) => {
@@ -80,7 +59,16 @@ const handleInput = (event: Event) => {
   const value = parseInt(target.value, 10)
 
   if (!isNaN(value)) {
-    model.value = clampValue(value)
+    // НЕ обрезаем! Просто присваиваем
+    model.value = value
+
+    // Проверяем валидность для подсветки
+    hasError.value = (
+        (props.min !== undefined && value < props.min) ||
+        (props.max !== undefined && value > props.max)
+    )
+  } else {
+    hasError.value = true
   }
 }
 
@@ -91,10 +79,13 @@ const handleBlur = (event: Event) => {
   if (isNaN(value)) {
     target.value = String(model.value)
   } else {
+    // Обрезаем ТОЛЬКО при blur
     const clamped = clampValue(value)
     model.value = clamped
     target.value = String(clamped)
   }
+
+  hasError.value = false
 }
 
 const handleKeyDown = (event: KeyboardEvent) => {
@@ -116,6 +107,7 @@ provideNumberFieldContext({
   id: computed(() => props.id),
   canIncrement,
   canDecrement,
+  hasError: computed(() => hasError.value), // добавили
   handleIncrement,
   handleDecrease,
   handleInput,
@@ -123,12 +115,3 @@ provideNumberFieldContext({
   handleKeyDown,
 })
 </script>
-
-<template>
-  <div
-      role="group"
-      :data-disabled="disabled ? '' : undefined"
-  >
-    <slot />
-  </div>
-</template>
