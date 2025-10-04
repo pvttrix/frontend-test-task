@@ -6,13 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
+    "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production",
     "preview": "vite preview",
     "type:check": "vue-tsc --noEmit",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "prepare": "cd .. && husky my-project/.husky"
+    "prepare": "cd .. && husky my-project/.husky",
+    "docker": "docker-compose up",
+    "docker:build": "docker-compose up --build"
   },
   "lint-staged": {
     "*.{js,ts,vue}": ["eslint --fix", "prettier --write"],
