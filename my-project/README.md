@@ -39,4 +39,3 @@ npm run preview
 - `npm run lint:check` - Check linting without fixing
 - `npm run format` - Format code with Prettier
 - `npm run format:check` - Check formatting without fixing
-
