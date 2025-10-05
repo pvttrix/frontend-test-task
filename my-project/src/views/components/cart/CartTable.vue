@@ -23,7 +23,7 @@ const handleUpdateQuantity = (itemId: number, quantity: number) => {
         class="w-full"
         role="table"
         aria-label="Shopping cart items">
-        <caption class="visually-hidden">Shopping cart with {{ cartStore.itemCount }} items</caption>
+        <caption class="sr-only">Shopping cart with {{ cartStore.itemCount }} items</caption>
 
         <thead>
           <tr>
@@ -50,7 +50,7 @@ const handleUpdateQuantity = (itemId: number, quantity: number) => {
             <th
               scope="col"
               class="pb-4">
-              <span class="visually-hidden">Actions</span>
+              <span class="sr-only">Actions</span>
             </th>
           </tr>
         </thead>

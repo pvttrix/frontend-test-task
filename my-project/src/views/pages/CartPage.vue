@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="visually-hidden">Cart Page</h1>
+  <h1 class="sr-only">Cart Page</h1>
   <div class="min-h-screen py-8">
     <div class="container mx-auto px-4">
       <div

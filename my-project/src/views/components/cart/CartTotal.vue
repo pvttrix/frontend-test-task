@@ -95,7 +95,7 @@ const handleCheckout = () => {
     </dl>
 
     <div
-      class="visually-hidden"
+      class="sr-only"
       role="status"
       aria-live="polite"
       aria-atomic="true">
