@@ -88,7 +88,7 @@ const handleKeydown = (e: KeyboardEvent) => {
         :disabled="isAtMin"
         :title="isAtMin ? `Minimum quantity is ${min}` : ''"
         :aria-label="`Decrease ${ariaLabel.toLowerCase()}`"
-        class="bg-bright-gray text-silver disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:ring-primary-500 flex h-full w-8 items-center justify-center transition-colors hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-inset active:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+        class="bg-bright-gray text-silver disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:ring-primary-500 flex h-full w-8 cursor-pointer items-center justify-center transition-colors hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-inset active:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
         @click="decrement">
         <span aria-hidden="true">−</span>
       </button>
@@ -102,7 +102,7 @@ const handleKeydown = (e: KeyboardEvent) => {
         :aria-valuemax="max"
         :aria-valuenow="model"
         role="spinbutton"
-        class="bg-bright-gray text-navy-blue focus:ring-primary-500 h-full w-12 border-x border-gray-300 text-center text-sm tabular-nums transition-colors focus:bg-white focus:ring-2 focus:outline-none"
+        class="bg-bright-gray text-navy-blue focus:ring-primary-500 h-full w-12 cursor-pointer border-x border-gray-300 text-center text-sm tabular-nums transition-colors focus:bg-white focus:ring-2 focus:outline-none"
         @input="handleInput"
         @blur="handleBlur"
         @keydown="handleKeydown" />
