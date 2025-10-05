@@ -6,7 +6,7 @@ defineOptions({
 });
 
 export interface UiButtonProps {
-  cursor?: 'pointer' | 'default' | 'not-allowed' | 'wait' | 'help' | 'text'
+  cursor?: 'pointer' | 'default' | 'not-allowed' | 'wait' | 'help' | 'text';
   variant?: 'success' | 'accent' | 'dark' | 'ghost' | 'outline';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   disabled?: boolean;
@@ -67,8 +67,8 @@ const buttonClasses = computed(() => {
     'not-allowed': 'cursor-not-allowed',
     wait: 'cursor-wait',
     help: 'cursor-help',
-    text: 'cursor-text'
-  }
+    text: 'cursor-text',
+  };
   const sizes = {
     xs: props.iconOnly ? 'w-6 h-6 p-1 text-xs' : 'px-2 py-1 text-xs rounded',
     sm: props.iconOnly ? 'w-8 h-8 p-1.5 text-sm' : 'px-3 py-1.5 text-sm rounded',
@@ -77,7 +77,7 @@ const buttonClasses = computed(() => {
     xl: props.iconOnly ? 'w-14 h-14 p-3 text-xl' : 'px-8 py-4 text-xl rounded-lg',
   };
 
-  const classes = [base, variants[props.variant],cursors[props.cursor], sizes[props.size]];
+  const classes = [base, variants[props.variant], cursors[props.cursor], sizes[props.size]];
 
   // Full width
   if (props.block) {

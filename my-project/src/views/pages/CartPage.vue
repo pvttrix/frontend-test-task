@@ -17,10 +17,14 @@ onMounted(() => {
   <h1 class="visually-hidden">Cart Page</h1>
   <div class="min-h-screen py-8">
     <div class="container mx-auto px-4">
-      <div v-if="cartStore.isLoading" class="flex justify-center items-center py-20">
+      <div
+        v-if="cartStore.isLoading"
+        class="flex justify-center items-center py-20">
         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
       </div>
-      <div v-else-if="cartStore.error" class="bg-red-50 border border-red-200 rounded-lg p-4 text-danger">
+      <div
+        v-else-if="cartStore.error"
+        class="bg-red-50 border border-red-200 rounded-lg p-4 text-danger">
         {{ cartStore.error }}
       </div>
 

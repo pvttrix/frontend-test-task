@@ -63,7 +63,11 @@ const handleCalculateShipping = async () => {
 
 <template>
   <section aria-labelledby="shipping-calculator-heading">
-    <h2 id="shipping-calculator-heading" class="text-md font-bold text-navy-blue mb-6">Calculate Shopping</h2>
+    <h2
+      id="shipping-calculator-heading"
+      class="text-md font-bold text-navy-blue mb-6">
+      Calculate Shopping
+    </h2>
 
     <form
       class="bg-magnolia rounded-lg shadow p-6 space-y-6"
@@ -71,7 +75,11 @@ const handleCalculateShipping = async () => {
       novalidate
       @submit.prevent="handleCalculateShipping">
       <div>
-        <label for="shipping-city" class="visually-hidden">City</label>
+        <label
+          for="shipping-city"
+          class="visually-hidden">
+          City
+        </label>
         <div class="relative">
           <input
             id="shipping-city"
@@ -82,13 +90,21 @@ const handleCalculateShipping = async () => {
             :aria-describedby="errors.city ? 'city-error' : undefined"
             class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-light-blue text-navy-blue placeholder:text-input-placeholder focus:outline-none focus:border-navy-blue transition-colors" />
         </div>
-        <p v-if="errors.city" id="city-error" class="mt-1 text-sm text-danger" role="alert">
+        <p
+          v-if="errors.city"
+          id="city-error"
+          class="mt-1 text-sm text-danger"
+          role="alert">
           {{ errors.city }}
         </p>
       </div>
 
       <div>
-        <label for="shipping-state" class="visually-hidden">State or Region</label>
+        <label
+          for="shipping-state"
+          class="visually-hidden">
+          State or Region
+        </label>
         <div class="relative">
           <input
             id="shipping-state"
@@ -99,13 +115,21 @@ const handleCalculateShipping = async () => {
             :aria-describedby="errors.state ? 'state-error' : undefined"
             class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-light-blue text-navy-blue placeholder:text-input-placeholder focus:outline-none focus:border-navy-blue transition-colors" />
         </div>
-        <p v-if="errors.state" id="state-error" class="mt-1 text-sm text-danger" role="alert">
+        <p
+          v-if="errors.state"
+          id="state-error"
+          class="mt-1 text-sm text-danger"
+          role="alert">
           {{ errors.state }}
         </p>
       </div>
 
       <div>
-        <label for="shipping-zipcode" class="visually-hidden">Zip Code</label>
+        <label
+          for="shipping-zipcode"
+          class="visually-hidden">
+          Zip Code
+        </label>
         <div class="relative">
           <input
             id="shipping-zipcode"
@@ -119,8 +143,16 @@ const handleCalculateShipping = async () => {
             :aria-describedby="errors.zipCode ? 'zipcode-error' : 'zipcode-hint'"
             class="w-full px-0 py-3 bg-transparent font-lato border-0 border-b-2 border-light-blue text-navy-blue placeholder:text-input-placeholder focus:outline-none focus:border-navy-blue transition-colors" />
         </div>
-        <p id="zipcode-hint" class="visually-hidden">Enter 5-digit postal code</p>
-        <p v-if="errors.zipCode" id="zipcode-error" class="mt-1 text-sm text-danger" role="alert">
+        <p
+          id="zipcode-hint"
+          class="visually-hidden">
+          Enter 5-digit postal code
+        </p>
+        <p
+          v-if="errors.zipCode"
+          id="zipcode-error"
+          class="mt-1 text-sm text-danger"
+          role="alert">
           {{ errors.zipCode }}
         </p>
       </div>

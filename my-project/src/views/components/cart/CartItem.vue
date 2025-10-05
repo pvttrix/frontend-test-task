@@ -37,7 +37,12 @@ const handleRemove = () => {
     <td class="xl:pr-32 lg:pr-16 md:pr-20 py-4 px-6">
       <div class="flex gap-3">
         <div class="relative flex-shrink-0">
-          <img :src="item.product.image" :alt="item.product.title" width="80" height="80" class="object-contain" />
+          <img
+            :src="item.product.image"
+            :alt="item.product.title"
+            width="80"
+            height="80"
+            class="object-contain" />
           <UiButton
             variant="dark"
             icon-only
@@ -45,7 +50,12 @@ const handleRemove = () => {
             class="absolute -top-2 -right-2 bg-black"
             :aria-label="`Remove ${item.product.title} from cart`"
             @click="handleRemove">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -70,7 +80,12 @@ const handleRemove = () => {
     </td>
 
     <td class="xl:pr-32 lg:pr-16 md:pr-20 py-4">
-      <UiNumberField v-model="quantity" class="h-5" :max="item.product.rating.count" :min="1" />
+      <UiNumberField
+        v-model="quantity"
+        :aria-label="`Quantity for ${item.product.title}`"
+        class="h-5"
+        :max="item.product.rating.count"
+        :min="1" />
     </td>
 
     <td class="py-4">
@@ -100,7 +115,12 @@ const handleRemove = () => {
           class="absolute -top-2 -right-2 bg-black"
           :aria-label="`Remove ${item.product.title} from cart`"
           @click="handleRemove">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -127,7 +147,11 @@ const handleRemove = () => {
     <div class="flex items-center justify-between">
       <div>
         <span class="text-sm font-medium text-light-gray block mb-2">Quantity:</span>
-        <UiNumberField v-model="quantity" :max="item.product.rating.count" :min="1" />
+        <UiNumberField
+          v-model="quantity"
+          :aria-label="`Quantity for ${item.product.title}`"
+          :max="item.product.rating.count"
+          :min="1" />
       </div>
 
       <div class="text-right text-base font-medium">
