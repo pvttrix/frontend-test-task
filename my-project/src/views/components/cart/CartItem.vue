@@ -137,7 +137,7 @@ const handleRemove = () => {
             <g id="SVGRepo_iconCarrier">
               <path
                 d="M5 5L19 19M5 19L19 5"
-                stroke="#000000"
+                stroke="#fff"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"></path>
