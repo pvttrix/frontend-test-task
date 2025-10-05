@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2b09c45-2580-4f3b-a988-c2bd5f1def16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/cart/CartShoppingCalculationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/cart/CartShoppingCalculationForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/api/productAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/api/productAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,10 +22,79 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Vitest.CartService.executor": "Run",
+    "Vitest.useCartStore.executor": "Run",
     "git-widget-placeholder": "main",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "prettierjs.PrettierConfiguration.Package": "/Users/pvttrix/Desktop/frontend-test-task/my-project/node_modules/prettier",
+    "ts.external.directory.path": "/Users/pvttrix/Desktop/frontend-test-task/my-project/node_modules/typescript/lib"
   }
 }]]></component>
+  <component name="RunManager" selected="Vitest.useCartStore.addItem.handles add item error">
+    <configuration name="CartService" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/my-project/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/my-project" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/my-project/src/services/CartService.test.ts" />
+      <test-names>
+        <test-name value="CartService" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="useCartStore" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/my-project/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/my-project" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/my-project/src/stores/cart.test.ts" />
+      <test-names>
+        <test-name value="useCartStore" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="useCartStore.addItem.handles add item error" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/my-project/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/my-project" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/my-project/src/stores/cart.test.ts" />
+      <test-names>
+        <test-name value="useCartStore" />
+        <test-name value="addItem" />
+        <test-name value="handles add item error" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="useCartStore.initial state" type="JavaScriptTestRunnerVitest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <vitest-package value="$PROJECT_DIR$/my-project/node_modules/vitest" />
+      <working-dir value="$PROJECT_DIR$/my-project" />
+      <vitest-options value="--run" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/my-project/src/stores/cart.test.ts" />
+      <test-names>
+        <test-name value="useCartStore" />
+        <test-name value="initial state" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Vitest.useCartStore.addItem.handles add item error" />
+        <item itemvalue="Vitest.useCartStore" />
+        <item itemvalue="Vitest.useCartStore.initial state" />
+        <item itemvalue="Vitest.CartService" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <servers />
   </component>

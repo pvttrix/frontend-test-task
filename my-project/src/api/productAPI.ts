@@ -16,7 +16,7 @@ export const productsApi = {
     return response.data;
   },
 
-  async createProduct(product: Partial<ProductDTO>): Promise<ProductDTO> {
+  async createProduct(product: Partial<ProductDTO>): Promise<Partial<ProductDTO>> {
     const response = await apiClient.post<ProductDTO>('/products', product);
     return response.data;
   },
