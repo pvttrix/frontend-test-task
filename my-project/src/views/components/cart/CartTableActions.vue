@@ -18,10 +18,7 @@ const handleClearCart = () => {
 </script>
 
 <template>
-  <div
-    class="flex flex-col sm:flex-row gap-4 justify-between"
-    role="group"
-    aria-label="Cart actions">
+  <div class="flex flex-col sm:flex-row gap-4 justify-between" role="group" aria-label="Cart actions">
     <UiButton
       variant="success"
       :disabled="cartStore.isLoading"
@@ -31,7 +28,7 @@ const handleClearCart = () => {
     </UiButton>
 
     <UiButton
-      variant="danger"
+      variant="accent"
       :disabled="cartStore.isEmpty || cartStore.isLoading"
       :aria-label="`Clear all ${cartStore.itemCount} items from cart`"
       @click="handleClearCart">

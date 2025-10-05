@@ -3,9 +3,11 @@ import type { ProductDTO, ProductCategory } from '../models/dto/ProductDTO.ts';
 
 export const productsApi = {
   async getProducts(limit: number): Promise<ProductDTO[]> {
-    const response = await apiClient.get<ProductDTO[]>('/products',{params: {
-      limit
-      }});
+    const response = await apiClient.get<ProductDTO[]>('/products', {
+      params: {
+        limit,
+      },
+    });
     return response.data;
   },
 

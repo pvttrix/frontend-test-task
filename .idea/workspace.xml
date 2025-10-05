@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e4386721-5ac7-4cd0-80aa-e5f827aa5ef9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/my-project/.prettierrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/.prettierrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/api/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/api/client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/api/productAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/api/productAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/assets/styles/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/assets/styles/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/utils/schemas/shipping.ts" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/utils/schemas/shipping.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/cart/CartEmpty.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/cart/CartEmpty.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/cart/CartItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/cart/CartItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/cart/CartShoppingCalculationForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/cart/CartShoppingCalculationForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/cart/CartTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/cart/CartTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/cart/CartTableActions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/cart/CartTableActions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/cart/CartTotal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/cart/CartTotal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/ui/UiButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/ui/UiButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/components/ui/UiNumberField.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/components/ui/UiNumberField.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/src/views/pages/CartPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/src/views/pages/CartPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-project/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-project/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="33cbkW4ZtQx15Hj2bjCwifvU0Ov" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/pvttrix/Desktop/frontend-test-task",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/pvttrix/Desktop/frontend-test-task/my-project/node_modules/prettier",
+    "ts.external.directory.path": "/Users/pvttrix/Desktop/frontend-test-task/my-project/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4386721-5ac7-4cd0-80aa-e5f827aa5ef9" name="Changes" comment="" />
+      <created>1759619450757</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759619450757</updated>
+      <workItem from="1759619451844" duration="329000" />
+      <workItem from="1759667329304" duration="3565000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

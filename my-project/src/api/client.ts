@@ -98,7 +98,7 @@ class ApiClient {
 }
 
 export const apiClient = new ApiClient({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://fakestoreapi.com'
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://fakestoreapi.com',
 });
 
 export { ApiClient };

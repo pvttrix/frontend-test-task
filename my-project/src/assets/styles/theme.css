@@ -3,9 +3,10 @@
   /* === COLORS === */
   --color-body: #fff;
   --color-success: #19d16f;
-  --color-danger: #fb2e86;
+  --color-danger: oklch(57.7% 0.245 27.325);
+  --color-accent: #fb2e86;
   --color-black: #000000;
-  --color-bright-gray: #e8e6f1;
+  --color-bright-gray: #e7e7ef;
   --color-magnolia: #f4f4fc;
   --color-light-gray: #a1a8c1;
   --color-silver: #bebfc2;

@@ -19,8 +19,13 @@
     "docker:build": "docker-compose up --build"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": ["eslint --fix", "prettier --write"],
-    "*.{json,md,css}": ["prettier --write"]
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",

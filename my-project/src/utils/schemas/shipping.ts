@@ -1,12 +1,13 @@
 import { z } from 'zod';
 
 export const shippingFormSchema = z.object({
-  city: z.string().trim().min(1, 'City is required').max(100, 'City name is too long'),
-  state: z.string().trim().min(1, 'State is required').max(100, 'State name is too long'),
-  zipCode: z
+  city: z
     .string()
-    .trim()
-    .regex(/^\d{5}$/, 'Zip code must be 5 digits'),
+    .min(2, 'City must be at least 2 characters')
+    .max(50, 'City must be less than 50 characters')
+    .regex(/^[a-zA-Z\s\-']+$/, 'City can only contain letters, spaces, hyphens and apostrophes')
+    .trim(),
+  state: z.string().min(1, 'State is required').trim(),
+  zipCode: z.string().regex(/^\d{5}$/, 'Zip code must be 5 digits'),
 });
-
 export type ShippingFormData = z.infer<typeof shippingFormSchema>;

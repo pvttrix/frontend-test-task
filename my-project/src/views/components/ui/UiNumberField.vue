@@ -58,12 +58,13 @@ const handleKeydown = (e: KeyboardEvent) => {
   <div
     role="group"
     :aria-label="ariaLabel"
-    class="flex items-center w-fit shadow-sm overflow-hidden h-8 border border-gray-300 rounded">
+    class="flex items-center w-fit shadow-sm overflow-hidden h-6 border border-gray-300">
     <button
       type="button"
+
       :disabled="model <= min"
       :aria-label="`Decrease ${ariaLabel.toLowerCase()}`"
-      class="w-8 h-full flex items-center justify-center bg-[#E7E7EF] text-[#BEBFC2] hover:bg-gray-200 active:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+      class="w-8 h-full flex items-center justify-center cursor-pointer bg-bright-gray text-silver  hover:bg-gray-200 active:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
       @click="decrement">
       <span aria-hidden="true">−</span>
     </button>
@@ -77,7 +78,7 @@ const handleKeydown = (e: KeyboardEvent) => {
       :aria-valuemax="max"
       :aria-valuenow="model"
       role="spinbutton"
-      class="w-12 h-full text-center border-x border-gray-300 bg-[#F0EFF2] text-navy-blue text-sm tabular-nums focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-colors"
+      class="w-12 h-full text-center border-x border-gray-300 bg-bright-gray text-navy-blue text-sm tabular-nums focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-colors"
       @input="handleInput"
       @blur="handleBlur"
       @keydown="handleKeydown" />
@@ -86,7 +87,7 @@ const handleKeydown = (e: KeyboardEvent) => {
       type="button"
       :disabled="model >= max"
       :aria-label="`Increase ${ariaLabel.toLowerCase()}`"
-      class="w-8 h-full flex items-center justify-center bg-[#E7E7EF] text-[#BEBFC2] hover:bg-gray-200 active:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+      class="w-8 h-full flex items-center justify-center cursor-pointer  bg-bright-gray text-silver hover:bg-gray-200 active:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
       @click="increment">
       <span aria-hidden="true">+</span>
     </button>

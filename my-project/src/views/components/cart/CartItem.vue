@@ -37,12 +37,7 @@ const handleRemove = () => {
     <td class="xl:pr-32 lg:pr-16 md:pr-20 py-4 px-6">
       <div class="flex gap-3">
         <div class="relative flex-shrink-0">
-          <img
-            :src="item.product.image"
-            :alt="item.product.title"
-            width="80"
-            height="80"
-            class="object-contain" />
+          <img :src="item.product.image" :alt="item.product.title" width="80" height="80" class="object-contain" />
           <UiButton
             variant="dark"
             icon-only
@@ -50,12 +45,7 @@ const handleRemove = () => {
             class="absolute -top-2 -right-2 bg-black"
             :aria-label="`Remove ${item.product.title} from cart`"
             @click="handleRemove">
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -65,10 +55,10 @@ const handleRemove = () => {
           </UiButton>
         </div>
         <div class="min-w-0">
-          <h3 class="text-base font-medium text-gray-900 line-clamp-2">
+          <h3 class="text-base font-medium text-navy-blue line-clamp-2">
             {{ item.product.title }}
           </h3>
-          <p class="text-sm text-gray-500 capitalize mt-1">
+          <p class="text-sm text-light-gray capitalize mt-1">
             {{ item.product.category }}
           </p>
         </div>
@@ -76,15 +66,11 @@ const handleRemove = () => {
     </td>
 
     <td class="xl:pr-32 lg:pr-16 py-4">
-      <span class="text-gray-900 font-medium">${{ item.product.price.toFixed(2) }}</span>
+      <span class="text-navy-blue font-medium">${{ item.product.price.toFixed(2) }}</span>
     </td>
 
     <td class="xl:pr-32 lg:pr-16 md:pr-20 py-4">
-      <UiNumberField
-        v-model="quantity"
-        class="h-4"
-        :max="item.product.rating.count"
-        :min="0" />
+      <UiNumberField v-model="quantity" class="h-5" :max="item.product.rating.count" :min="1" />
     </td>
 
     <td class="py-4">
@@ -114,12 +100,7 @@ const handleRemove = () => {
           class="absolute -top-2 -right-2 bg-black"
           :aria-label="`Remove ${item.product.title} from cart`"
           @click="handleRemove">
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -132,28 +113,25 @@ const handleRemove = () => {
         <h3 class="text-sm font-medium text-navy-blue line-clamp-2">
           {{ item.product.title }}
         </h3>
-        <p class="text-xs text-gray-500 capitalize mt-1">
+        <p class="text-xs text-light-gray capitalize mt-1">
           {{ item.product.category }}
         </p>
       </div>
     </div>
 
     <div class="flex items-center justify-between mb-3 pb-3 border-b border-gray-200">
-      <span class="text-sm font-medium text-gray-600">Price:</span>
+      <span class="text-sm font-medium text-light-gray">Price:</span>
       <span class="text-base font-medium text-navy-blue">${{ item.product.price.toFixed(2) }}</span>
     </div>
 
     <div class="flex items-center justify-between">
       <div>
-        <span class="text-sm font-medium text-gray-600 block mb-2">Quantity:</span>
-        <UiNumberField
-          v-model="quantity"
-          :max="item.product.rating.count"
-          :min="0" />
+        <span class="text-sm font-medium text-light-gray block mb-2">Quantity:</span>
+        <UiNumberField v-model="quantity" :max="item.product.rating.count" :min="1" />
       </div>
 
       <div class="text-right text-base font-medium">
-        <span class="text-gray-600 block mb-2">Total:</span>
+        <span class="text-light-gray block mb-2">Total:</span>
         <span class="text-navy-blue">
           {{ formatPrice(itemTotal) }}
         </span>

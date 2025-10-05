@@ -6,7 +6,8 @@ defineOptions({
 });
 
 export interface UiButtonProps {
-  variant?: 'success' | 'danger' | 'dark' | 'ghost' | 'outline';
+  cursor?: 'pointer' | 'default' | 'not-allowed' | 'wait' | 'help' | 'text'
+  variant?: 'success' | 'accent' | 'dark' | 'ghost' | 'outline';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   disabled?: boolean;
   loading?: boolean;
@@ -18,6 +19,7 @@ export interface UiButtonProps {
 }
 
 const props = withDefaults(defineProps<UiButtonProps>(), {
+  cursor: 'pointer',
   variant: 'success',
   size: 'md',
   disabled: false,
@@ -49,7 +51,7 @@ const buttonClasses = computed(() => {
       ' ',
     ),
 
-    danger: ['bg-danger text-white', 'hover:bg-danger/80', 'focus:ring-red-500', 'shadow-sm hover:shadow'].join(' '),
+    accent: ['bg-accent text-white', 'hover:bg-accent/80', 'focus:ring-red-500', 'shadow-sm hover:shadow'].join(' '),
     dark: ['bg-black text-white hover:bg-gray-800 focus:ring-black shadow-sm hover:shadow'].join(' '),
     ghost: ['bg-transparent text-gray-700', 'hover:bg-gray-100', 'focus:ring-gray-400'].join(' '),
 
@@ -59,7 +61,14 @@ const buttonClasses = computed(() => {
       'focus:ring-gray-400',
     ].join(' '),
   };
-
+  const cursors = {
+    pointer: 'cursor-pointer',
+    default: 'cursor-default',
+    'not-allowed': 'cursor-not-allowed',
+    wait: 'cursor-wait',
+    help: 'cursor-help',
+    text: 'cursor-text'
+  }
   const sizes = {
     xs: props.iconOnly ? 'w-6 h-6 p-1 text-xs' : 'px-2 py-1 text-xs rounded',
     sm: props.iconOnly ? 'w-8 h-8 p-1.5 text-sm' : 'px-3 py-1.5 text-sm rounded',
@@ -68,7 +77,7 @@ const buttonClasses = computed(() => {
     xl: props.iconOnly ? 'w-14 h-14 p-3 text-xl' : 'px-8 py-4 text-xl rounded-lg',
   };
 
-  const classes = [base, variants[props.variant], sizes[props.size]];
+  const classes = [base, variants[props.variant],cursors[props.cursor], sizes[props.size]];
 
   // Full width
   if (props.block) {
