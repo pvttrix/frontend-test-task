@@ -8,5 +8,6 @@
   "tabWidth": 2,
   "endOfLine": "auto",
   "htmlWhitespaceSensitivity": "ignore",
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

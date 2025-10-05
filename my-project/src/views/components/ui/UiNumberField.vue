@@ -82,13 +82,13 @@ const handleKeydown = (e: KeyboardEvent) => {
     <div
       role="group"
       :aria-label="ariaLabel"
-      class="flex items-center w-fit shadow-sm overflow-hidden h-6 border border-gray-300">
+      class="flex h-6 w-fit items-center overflow-hidden border border-gray-300 shadow-sm">
       <button
         type="button"
         :disabled="isAtMin"
         :title="isAtMin ? `Minimum quantity is ${min}` : ''"
         :aria-label="`Decrease ${ariaLabel.toLowerCase()}`"
-        class="w-8 h-full flex items-center justify-center bg-bright-gray text-silver hover:bg-gray-200 active:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+        class="bg-bright-gray text-silver disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:ring-primary-500 flex h-full w-8 items-center justify-center transition-colors hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-inset active:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
         @click="decrement">
         <span aria-hidden="true">−</span>
       </button>
@@ -102,7 +102,7 @@ const handleKeydown = (e: KeyboardEvent) => {
         :aria-valuemax="max"
         :aria-valuenow="model"
         role="spinbutton"
-        class="w-12 h-full text-center border-x border-gray-300 bg-bright-gray text-navy-blue text-sm tabular-nums focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-colors"
+        class="bg-bright-gray text-navy-blue focus:ring-primary-500 h-full w-12 border-x border-gray-300 text-center text-sm tabular-nums transition-colors focus:bg-white focus:ring-2 focus:outline-none"
         @input="handleInput"
         @blur="handleBlur"
         @keydown="handleKeydown" />
@@ -112,7 +112,7 @@ const handleKeydown = (e: KeyboardEvent) => {
         :disabled="isAtMax"
         :title="isAtMax ? `Maximum available: ${max}` : ''"
         :aria-label="`Increase ${ariaLabel.toLowerCase()}`"
-        class="w-8 h-full flex items-center justify-center bg-bright-gray text-silver hover:bg-gray-200 active:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+        class="bg-bright-gray text-silver disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:ring-primary-500 flex h-full w-8 items-center justify-center transition-colors hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-inset active:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
         @click="increment">
         <span aria-hidden="true">+</span>
       </button>
@@ -129,8 +129,8 @@ const handleKeydown = (e: KeyboardEvent) => {
       <div
         v-if="showWarning"
         role="alert"
-        class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1.5 bg-danger text-white text-xs rounded shadow-lg whitespace-nowrap z-10">
-        <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-danger rotate-45"></div>
+        class="bg-danger absolute top-full left-1/2 z-10 mt-2 -translate-x-1/2 rounded px-3 py-1.5 text-xs whitespace-nowrap text-white shadow-lg">
+        <div class="bg-danger absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45"></div>
         Maximum available: {{ max }}
       </div>
     </Transition>

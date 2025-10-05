@@ -61,7 +61,7 @@ const handleCalculateShipping = async () => {
   <section aria-labelledby="shipping-calculator-heading">
     <h2
       id="shipping-calculator-heading"
-      class="text-md font-bold text-navy-blue mb-6">
+      class="text-md text-navy-blue mb-6 font-bold">
       Calculate Shopping
     </h2>
 
@@ -74,7 +74,7 @@ const handleCalculateShipping = async () => {
     </div>
 
     <form
-      class="bg-magnolia rounded-lg shadow p-6 space-y-6"
+      class="bg-magnolia space-y-6 rounded-lg p-6 shadow"
       novalidate
       @submit.prevent="handleCalculateShipping">
       <div>
@@ -90,11 +90,11 @@ const handleCalculateShipping = async () => {
           placeholder="Stuttgart"
           :aria-invalid="!!errors.city"
           :aria-describedby="errors.city ? 'city-error' : undefined"
-          class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-light-blue text-navy-blue placeholder:text-input-placeholder focus:outline-none focus:border-navy-blue transition-colors" />
+          class="border-light-blue text-navy-blue placeholder:text-input-placeholder focus:border-navy-blue w-full border-0 border-b-2 bg-transparent px-0 py-3 transition-colors focus:outline-none" />
         <p
           v-if="errors.city"
           id="city-error"
-          class="mt-1 text-sm text-danger"
+          class="text-danger mt-1 text-sm"
           role="alert">
           {{ errors.city }}
         </p>
@@ -113,11 +113,11 @@ const handleCalculateShipping = async () => {
           placeholder="Mirpur Dhaka - 1200"
           :aria-invalid="!!errors.state"
           :aria-describedby="errors.state ? 'state-error' : undefined"
-          class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-light-blue text-navy-blue placeholder:text-input-placeholder focus:outline-none focus:border-navy-blue transition-colors" />
+          class="border-light-blue text-navy-blue placeholder:text-input-placeholder focus:border-navy-blue w-full border-0 border-b-2 bg-transparent px-0 py-3 transition-colors focus:outline-none" />
         <p
           v-if="errors.state"
           id="state-error"
-          class="mt-1 text-sm text-danger"
+          class="text-danger mt-1 text-sm"
           role="alert">
           {{ errors.state }}
         </p>
@@ -138,11 +138,11 @@ const handleCalculateShipping = async () => {
           maxlength="5"
           :aria-invalid="!!errors.zipCode"
           :aria-describedby="errors.zipCode ? 'zipcode-error' : undefined"
-          class="w-full px-0 py-3 bg-transparent border-0 border-b-2 border-light-blue text-navy-blue placeholder:text-input-placeholder focus:outline-none focus:border-navy-blue transition-colors" />
+          class="border-light-blue text-navy-blue placeholder:text-input-placeholder focus:border-navy-blue w-full border-0 border-b-2 bg-transparent px-0 py-3 transition-colors focus:outline-none" />
         <p
           v-if="errors.zipCode"
           id="zipcode-error"
-          class="mt-1 text-sm text-danger"
+          class="text-danger mt-1 text-sm"
           role="alert">
           {{ errors.zipCode }}
         </p>
@@ -152,8 +152,8 @@ const handleCalculateShipping = async () => {
         v-if="shippingMessage"
         role="status"
         aria-live="polite"
-        class="p-3 rounded text-sm"
-        :class="shippingMessage.includes('Failed') ? 'bg-red-50 text-danger' : 'bg-transparent text-success'">
+        class="rounded p-3 text-sm"
+        :class="shippingMessage.includes('Failed') ? 'text-danger bg-red-50' : 'text-success bg-transparent'">
         {{ shippingMessage }}
       </div>
 

@@ -19,12 +19,12 @@ onMounted(() => {
     <div class="container mx-auto px-4">
       <div
         v-if="cartStore.isLoading"
-        class="flex justify-center items-center py-20">
-        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+        class="flex items-center justify-center py-20">
+        <div class="h-12 w-12 animate-spin rounded-full border-b-2 border-green-500"></div>
       </div>
       <div
         v-else-if="cartStore.error"
-        class="bg-red-50 border border-red-200 rounded-lg p-4 text-danger">
+        class="text-danger rounded-lg border border-red-200 bg-red-50 p-4">
         {{ cartStore.error }}
       </div>
 

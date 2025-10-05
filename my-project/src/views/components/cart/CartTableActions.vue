@@ -19,7 +19,7 @@ const handleClearCart = () => {
 
 <template>
   <div
-    class="flex flex-col sm:flex-row gap-4 justify-between"
+    class="flex flex-col justify-between gap-4 sm:flex-row"
     role="group"
     aria-label="Cart actions">
     <UiButton

@@ -7,12 +7,12 @@ const cartStore = useCartStore();
 
 <template>
   <div
-    class="bg-white rounded-lg shadow p-12 text-center"
+    class="rounded-lg bg-white p-12 text-center shadow"
     role="status"
     aria-live="polite">
-    <div class="flex justify-center mb-6">
+    <div class="mb-6 flex justify-center">
       <svg
-        class="w-24 h-24 text-light-gray"
+        class="text-light-gray h-24 w-24"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -26,10 +26,10 @@ const cartStore = useCartStore();
     </div>
 
     <!-- Title -->
-    <h2 class="text-2xl font-semibold text-navy-blue mb-2">Your cart is empty</h2>
+    <h2 class="text-navy-blue mb-2 text-2xl font-semibold">Your cart is empty</h2>
 
     <!-- Description -->
-    <p class="text-silver mb-8 max-w-sm mx-auto">
+    <p class="text-silver mx-auto mb-8 max-w-sm">
       Looks like you haven't added any items to your cart yet. Start shopping to fill it up!
     </p>
 
@@ -40,7 +40,7 @@ const cartStore = useCartStore();
       aria-label="Add first item to cart"
       @click="cartStore.addItem">
       <svg
-        class="w-5 h-5 mr-2"
+        class="mr-2 h-5 w-5"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"

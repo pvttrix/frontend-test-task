@@ -18,7 +18,7 @@ const handleUpdateQuantity = (itemId: number, quantity: number) => {
 <template>
   <div v-if="!cartStore.isEmpty">
     <!-- Desktop: Table -->
-    <div class="hidden md:block bg-white rounded-lg">
+    <div class="hidden rounded-lg bg-white md:block">
       <table
         class="w-full"
         role="table"
@@ -29,22 +29,22 @@ const handleUpdateQuantity = (itemId: number, quantity: number) => {
           <tr>
             <th
               scope="col"
-              class="text-navy-blue text-left xl:pr-32 lg:pr-16 md:pr-20 pb-4 px-6 pt-4">
+              class="text-navy-blue px-6 pt-4 pb-4 text-left md:pr-20 lg:pr-16 xl:pr-32">
               Product
             </th>
             <th
               scope="col"
-              class="text-navy-blue text-left xl:pr-32 lg:pr-16 md:pr-20 pb-4">
+              class="text-navy-blue pb-4 text-left md:pr-20 lg:pr-16 xl:pr-32">
               Price
             </th>
             <th
               scope="col"
-              class="text-navy-blue text-left xl:pr-32 lg:pr-16 md:pr-20 pb-4">
+              class="text-navy-blue pb-4 text-left md:pr-20 lg:pr-16 xl:pr-32">
               Quantity
             </th>
             <th
               scope="col"
-              class="text-navy-blue text-left lg:pr-16 md:pr-20 pb-4">
+              class="text-navy-blue pb-4 text-left md:pr-20 lg:pr-16">
               Total
             </th>
             <th
@@ -67,7 +67,7 @@ const handleUpdateQuantity = (itemId: number, quantity: number) => {
     </div>
 
     <!-- Mobile: Cards -->
-    <div class="md:hidden space-y-4">
+    <div class="space-y-4 md:hidden">
       <CartItem
         v-for="item in cartStore.items"
         :key="item.product.id"
