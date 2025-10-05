@@ -89,7 +89,6 @@ All core requirements + bonuses are implemented:
 - **Git Hooks**: Pre-commit linting/formatting, pre-push tests
 - **Code Quality**: ESLint + Prettier with Tailwind class sorting
 
-
 ## Live Demo
 
 🔗 [View on Vercel](https://frontend-test-task-irwrv0exq-pvttrixs-projects.vercel.app/)
