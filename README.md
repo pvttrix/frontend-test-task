@@ -67,67 +67,88 @@ The task involves fetching initial product data from a public API, displaying ca
 
 ---
 
-## Implementation Notes
+## Implementation Summary
 
-### What's Done
+### Core Requirements
 
-All core requirements + bonuses are implemented:
+- Vue 3 Composition API with TypeScript
+- FakeStore API integration (fetch products, add item)
+- Cart operations (add, remove, update quantity, clear)
+- Dynamic calculations (subtotal, 20% VAT, total)
+- Responsive design with Tailwind CSS v4
+- Pinia state management
 
-- Vue 3 with Composition API & TypeScript
-- Pinia for state management
-- Tailwind CSS with responsive design
-- Full cart functionality (add, remove, update quantities, clear)
-- Dynamic calculations (subtotal, tax 20%, shipping, total)
-- API integration with FakeStoreAPI
-- Form validation with Zod
+### Bonus Features
 
-### Extra Features
+- Shipping calculator with Zod validation
+- Quantity input with validation and user feedback tooltips
+- Unit tests (Vitest) for store and service logic
+- Full accessibility (ARIA attributes, keyboard navigation, screen readers)
+- Docker support with compose
+- Pre-commit hooks (lint/format) and pre-push tests
 
-- **Unit Tests**: Vitest setup with 31 tests covering store and service logic
-- **Accessibility**: ARIA labels, roles, keyboard navigation, screen reader support
-- **Docker**: Full containerization with docker-compose
-- **Git Hooks**: Pre-commit linting/formatting, pre-push tests
-- **Code Quality**: ESLint + Prettier with Tailwind class sorting
+### Live Demo
 
-## Live Demo
+https://frontend-test-task-irwrv0exq-pvttrixs-projects.vercel.app/
 
-🔗 [View on Vercel](https://frontend-test-task-irwrv0exq-pvttrixs-projects.vercel.app/)
-
-### Quick Start
+### Getting Started
 
 ```bash
 cd my-project
-
-# Install dependencies
 npm install
+npm run dev        # http://localhost:5173
+```
 
-# Development
-npm run dev
+### Docker
 
-# Run tests
-npm test              # watch mode
-npm run test:run      # single run
-npm run test:ui       # UI mode
+```bash
+docker-compose up  # http://localhost:8000
+```
 
-# Linting & Formatting
-npm run lint
-npm run format
+### Available Scripts
 
-# Build
-npm run build
-
-# Docker (alternative)
-npm run docker        # or docker-compose up
+```bash
+npm run dev           # Development server
+npm run build         # Production build
+npm test              # Run tests (watch mode)
+npm run test:run      # Run tests once
+npm run test:ui       # Vitest UI
+npm run lint          # Lint and fix
+npm run format        # Format code
 ```
 
 ### Tech Stack
 
-- Vue 3 + TypeScript + Vite
+- Vue 3 + TypeScript
 - Pinia (state management)
 - Tailwind CSS v4
-- Zod (validation)
-- Vitest
+- Zod (form validation)
+- Vitest + Vue Test Utils
 - Docker
+
+### Testing
+
+Unit tests cover:
+
+- Cart store (CRUD operations, calculations, error handling)
+- Cart service (totals calculation, validation, price rounding)
+- API mocking with Vitest
+
+### Architecture Notes
+
+- **Component structure**: Emit events for reusability (CartItem emits to parent)
+- **State management**: Pinia for cart state, computed properties for derived data
+- **Validation**: Zod schemas for shipping form, inline validation for quantity
+- **Accessibility**: WCAG 2.1 compliant with proper ARIA roles and labels
+- **Testing**: Focus on business logic (store/service layer)
+
+### Implementation Details
+
+- Mock API returns partial data for POST - extended locally with full DTO
+- Shipping cost randomly generated (10-30 range)
+- Quantity clamped to product stock (rating.count)
+- VAT rate: 20% (configurable in constants)
+
 ---
 
 ## Any questions?

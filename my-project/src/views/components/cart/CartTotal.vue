@@ -1,93 +1,57 @@
 <script setup lang="ts">
 import { useCartStore } from '../../../stores/cart.ts';
-import { computed } from 'vue';
 import UiButton from '../ui/UiButton.vue';
 import { formatPrice } from '../../../utils/formatter.ts';
 
 const cartStore = useCartStore();
 
-const subtotalLabel = computed(() => `Subtotal: ${formatPrice(cartStore.totals.subtotal)}`);
-
-const shippingLabel = computed(() =>
-  cartStore.totals.shipping > 0 ? `Shipping: ${formatPrice(cartStore.totals.shipping)}` : 'Shipping: Not calculated',
-);
-
-const taxLabel = computed(() => `Tax at 20%: ${formatPrice(cartStore.totals.tax)}`);
-
-const totalLabel = computed(() => `Total: ${formatPrice(cartStore.totals.total)}`);
-
 const handleCheckout = () => {
   if (cartStore.isEmpty) return;
-
-  // TODO: Implement checkout logic
   alert('Proceeding to checkout...');
 };
 </script>
 
 <template>
-  <h2
-    id="cart-totals-heading"
-    class="text-md text-navy-blue mt-2 mb-6 font-bold">
-    Cart Totals
-  </h2>
   <aside
-    class="bg-magnolia font-lato rounded-lg p-6 shadow"
+    class="bg-magnolia rounded-lg p-6 shadow"
     role="region"
     aria-labelledby="cart-totals-heading">
+    <h2
+      id="cart-totals-heading"
+      class="text-md text-navy-blue mb-6 font-bold">
+      Cart Totals
+    </h2>
+
     <dl class="space-y-4">
       <div class="flex items-center justify-between">
         <dt class="text-navy-blue text-base">Subtotals:</dt>
-        <dd
-          class="text-navy-blue text-base font-light"
-          :aria-label="subtotalLabel">
+        <dd class="text-navy-blue text-base font-light">
           {{ formatPrice(cartStore.totals.subtotal) }}
         </dd>
       </div>
 
-      <div
-        class="border-bright-gray border-t pt-4"
-        role="separator"
-        aria-hidden="true">
+      <div class="border-bright-gray border-t pt-4">
         <div class="flex items-center justify-between">
           <dt class="text-navy-blue text-base">Shipping</dt>
-          <dd
-            class="text-navy-blue text-base font-light"
-            :aria-label="shippingLabel">
-            <span v-if="cartStore.totals.shipping > 0">
-              {{ formatPrice(cartStore.totals.shipping) }}
-            </span>
-            <span
-              v-else
-              class="text-navy-blue font-light">
-              —
-            </span>
+          <dd class="text-navy-blue text-base font-light">
+            {{ cartStore.totals.shipping > 0 ? formatPrice(cartStore.totals.shipping) : '—' }}
           </dd>
         </div>
       </div>
 
-      <div
-        class="border-bright-gray border-t pt-4"
-        role="separator"
-        aria-hidden="true">
+      <div class="border-bright-gray border-t pt-4">
         <div class="flex items-center justify-between">
           <dt class="text-navy-blue text-base">Tax (20%)</dt>
-          <dd
-            class="text-navy-blue text-base font-light"
-            :aria-label="taxLabel">
+          <dd class="text-navy-blue text-base font-light">
             {{ formatPrice(cartStore.totals.tax) }}
           </dd>
         </div>
       </div>
 
-      <div
-        class="border-bright-gray border-t pt-4"
-        role="separator"
-        aria-hidden="true">
+      <div class="border-bright-gray border-t pt-4">
         <div class="flex items-center justify-between">
           <dt class="text-navy-blue text-lg">Totals:</dt>
-          <dd
-            class="text-navy-blue text-base font-light"
-            :aria-label="totalLabel">
+          <dd class="text-navy-blue text-base font-light">
             {{ formatPrice(cartStore.totals.total) }}
           </dd>
         </div>
@@ -97,8 +61,7 @@ const handleCheckout = () => {
     <div
       class="sr-only"
       role="status"
-      aria-live="polite"
-      aria-atomic="true">
+      aria-live="polite">
       Cart total is {{ formatPrice(cartStore.totals.total) }}
     </div>
 
@@ -108,7 +71,6 @@ const handleCheckout = () => {
       size="lg"
       class="mt-6"
       :disabled="cartStore.isEmpty"
-      :aria-label="`Proceed to checkout with total of ${formatPrice(cartStore.totals.total)}`"
       @click="handleCheckout">
       Proceed To Checkout
     </UiButton>

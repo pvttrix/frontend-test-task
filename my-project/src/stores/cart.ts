@@ -52,7 +52,7 @@ export const useCartStore = defineStore('cart', () => {
       };
 
       // mock api returns just 3 fields {"id":21,"title":"Mens Casual Premium Slim Fit T-Shirts ","price":22.3}
-      // but we need the whole DTO, that is why we dont push it in store but push an  extended productToSave
+      // but we need the whole DTO, that is why we don't push it in store but push an extended productToSave mock
 
       await productsApi.createProduct({
         title: 'Mens Casual Premium Slim Fit T-Shirts ',

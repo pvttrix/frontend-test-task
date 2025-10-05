@@ -10,4 +10,3 @@ export const shippingFormSchema = z.object({
   state: z.string().min(1, 'State is required').trim(),
   zipCode: z.string().regex(/^\d{5}$/, 'Zip code must be 5 digits'),
 });
-export type ShippingFormData = z.infer<typeof shippingFormSchema>;

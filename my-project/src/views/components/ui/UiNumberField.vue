@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, onBeforeUnmount } from 'vue';
 
 interface Props {
   min?: number;
@@ -34,6 +34,12 @@ const displayWarning = () => {
     showWarning.value = false;
   }, 2000);
 };
+
+onBeforeUnmount(() => {
+  if (warningTimeout.value) {
+    clearTimeout(warningTimeout.value);
+  }
+});
 
 const increment = () => {
   if (model.value < props.max) {
@@ -112,7 +118,7 @@ const handleKeydown = (e: KeyboardEvent) => {
         :disabled="isAtMax"
         :title="isAtMax ? `Maximum available: ${max}` : ''"
         :aria-label="`Increase ${ariaLabel.toLowerCase()}`"
-        class="bg-bright-gray text-silver cursor-pointer disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:ring-primary-500 flex h-full w-8 items-center justify-center transition-colors hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-inset active:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+        class="bg-bright-gray text-silver disabled:hover:bg-bright-gray disabled:active:bg-bright-gray focus:ring-primary-500 flex h-full w-8 cursor-pointer items-center justify-center transition-colors hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-inset active:bg-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
         @click="increment">
         <span aria-hidden="true">+</span>
       </button>
